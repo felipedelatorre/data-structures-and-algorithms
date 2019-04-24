@@ -1,6 +1,4 @@
 'use strict';
-
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
