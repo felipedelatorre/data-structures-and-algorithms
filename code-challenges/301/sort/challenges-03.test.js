@@ -112,7 +112,18 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort( (a, b) => {
+    if (a.lastName !== b.lastName){
+      return a.lastName > b.lastName;
+    } else if (a.firstName !== b.lastName) {
+      return a.firstName > b.firstName;
+    } else {
+      console.log(`last name should be same ${a.lastName} and ${b.lastName}` );
+      console.log(`last name should be dif ${a.firstName} and ${b.firstName}`);
+      console.log(`the age should be diff ${a.age} and ${b.age}`)
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
