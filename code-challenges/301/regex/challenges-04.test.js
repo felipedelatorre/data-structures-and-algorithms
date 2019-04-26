@@ -32,7 +32,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let aToJCities = [];
+  let aToJ = /(^[A-J]).+/;
+
+  arr.forEach( element => {
+    if(aToJ.test(element)) {
+      aToJCities.push(element);
+    }
+  });
+  return aToJCities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +52,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let regex = /\b([Oo]ct)(ober)?\b/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +64,8 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regEx = /\w+\s/g;
+  return str.match(regEx);
 };
 
 /* ------------------------------------------------------------------------------------------------
