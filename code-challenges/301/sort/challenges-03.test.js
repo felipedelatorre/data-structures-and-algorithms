@@ -46,6 +46,7 @@ const alphabetizeBetter = (arr) => {
   arr.sort( (a, b ) => {
     return a.toUpperCase() > b.toUpperCase();
   });
+  console.log(arr);
   return arr;
 };
 
