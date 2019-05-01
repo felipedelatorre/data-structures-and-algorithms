@@ -112,10 +112,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  let newArray = [];
-  arr.map(element => {
-    element = element.ability.name;
-    newArray.push(element);
+  let newArray = arr.map(element => {
+    return element = element.ability.name;
   });
   return newArray;
 };
