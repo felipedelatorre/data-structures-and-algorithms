@@ -6,12 +6,11 @@ Write a function named forLoopTwoToThe that, given an array of integers as input
 You may choose to complete this challenge using a for loop, for...in syntax, or for...of syntax.
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
-//We are using for of
 
 const forLoopTwoToThe = (arr) => {
   let numberToPowerOfTwo = [];
-  for (var number in arr) {
-    numberToPowerOfTwo.push(number = Math.pow(number, 2));
+  for (var number of arr) {
+    numberToPowerOfTwo.push(number = Math.pow(2, number));
   }
   return numberToPowerOfTwo;
 };
@@ -20,9 +19,15 @@ const forLoopTwoToThe = (arr) => {
 CHALLENGE 2
 Write a function named forEachTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 1, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
-// similar to challenge 1
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  let numberToPowerOfTwo = [];
+
+  arr.forEach( (element) => {
+    numberToPowerOfTwo.push(element = Math.pow(2, element));
+  });
+
+  return numberToPowerOfTwo;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +36,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  let newArr = arr.map( element => Math.pow(2, element));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,7 +48,8 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  let newArray = arr.map( element => element.charCodeAt());
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +60,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here... Dont forget to return
+  let newArray = arr.map(el => {
+    if (el % 2 === 0) {
+      return el = 'even';
+    } else if(el % 2 === 1){
+      return el = 'odd';
+    } else {
+      return el = 'N/A';
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +112,13 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  arr.map(element => {
+    element = element.ability.name;
+    newArray.push(element);
+  });
+  return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
