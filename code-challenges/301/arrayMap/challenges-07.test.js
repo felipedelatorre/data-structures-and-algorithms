@@ -60,13 +60,13 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  let newArray = arr.map(el => {
-    if (el % 2 === 0) {
-      return el = 'even';
-    } else if(el % 2 === 1){
-      return el = 'odd';
+  let newArray = arr.map(element => {
+    if (element % 2 === 0) {
+      return element = 'even';
+    } else if(element % 2 === 1){
+      return element = 'odd';
     } else {
-      return el = 'N/A';
+      return element = 'N/A';
     }
   });
   return newArray;
@@ -118,7 +118,6 @@ const extractAbilities = (arr) => {
     newArray.push(element);
   });
   return newArray;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
