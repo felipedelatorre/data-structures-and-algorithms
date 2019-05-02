@@ -21,13 +21,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 ------------------------------------------------------------------------------------------------ */
 const forEachTwoToThe = (arr) => {
   let numberToPowerOfTwo = [];
-
   arr.forEach( (element) => {
     numberToPowerOfTwo.push(element = Math.pow(2, element));
   });
-
   return numberToPowerOfTwo;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
