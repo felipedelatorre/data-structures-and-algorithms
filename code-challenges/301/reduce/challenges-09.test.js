@@ -66,7 +66,11 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let names = arr.reduce( (acc, cv) => {
+    acc.push(cv.name);
+    return acc;
+  }, []);
+  return names;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +80,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+  let toArray = arr.split('');
+  toArray = toArray.reduce((acc, cv) => {
+    acc = cv + acc;
+    return acc;
+  });
+  return toArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,7 +137,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let numOfKids = 0;
+  numOfKids = arr.reduce( (acc, cv) => {
+    if (cv.children) {
+      acc = acc + cv.children.length;
+    }
+    return acc;
+  }, 0);
+  return numOfKids;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,7 +154,16 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let average = 0;
+  average = arr.reduce( (acc, cv, i, arr) => {
+    acc += cv;
+    if (i === arr.length - 1){
+      return acc/arr.length;
+    } else {
+      return acc;
+    }
+  });
+  return average;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -157,7 +182,19 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let totalPrimes = 0;
+  totalPrimes = arr.reduce( (acc, cv) => {
+    if (isPrime(cv)) {  
+      acc = acc + 1;
+      console.log(`primes ${cv} and count is at ${acc}`);
+
+      return acc;
+    } else { 
+      console.log(`non-primes ${cv}`)
+      return acc;
+    }
+  }, 0);
+  return totalPrimes;
 };
 
 /* ------------------------------------------------------------------------------------------------
