@@ -117,9 +117,10 @@ For example:
   removeEvenValues(integers);
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
+// Creating shallow copies to not mutate the actual array but iterate over them https://stackoverflow.com/questions/24812930/how-to-remove-element-from-array-in-foreach-loop
 
 const removeEvenValues = (arr) => {
-  arr.forEach(element => {
+  arr.slice().reverse().forEach( (element) => {
     if (element % 2 === 0) {
       arr.splice(arr.indexOf(element), 1);
     }
