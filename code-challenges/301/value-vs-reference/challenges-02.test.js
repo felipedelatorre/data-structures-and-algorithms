@@ -6,6 +6,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   return str + ' The end.';
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +68,7 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   arr2.forEach(element => {
-   arr1.push(element);
+    arr1.push(element);
   });
 };
 
