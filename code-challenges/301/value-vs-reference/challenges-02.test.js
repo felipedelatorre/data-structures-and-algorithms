@@ -50,9 +50,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => { 
-   people.forEach(element  => {
-      element.isAuthor = true;
-   });
+  people.forEach(element  => {
+    element.isAuthor = true;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +69,7 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   arr2.forEach(element => {
-   arr1.push(element);
+    arr1.push(element);
   });
 };
 
