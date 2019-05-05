@@ -80,7 +80,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+  let toArray = arr.split('');
+  toArray = toArray.reduce((acc, cv) => {
+    acc = cv + acc;
+    return acc;
+  });
+  return toArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,7 +137,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let numOfKids = 0;
+  numOfKids = arr.reduce( (acc, cv) => {
+    if (cv.children) {
+      acc = acc + cv.children.length;
+    }
+    return acc;
+  }, 0);
+  return numOfKids;
 };
 
 /* ------------------------------------------------------------------------------------------------
