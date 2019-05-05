@@ -1,6 +1,11 @@
 
 # Created by https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
 
+
+### Testing gitignore ###
+package-lock.json
+package.json
+
 ### Linux ###
 *~
 
@@ -223,6 +228,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
 
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
