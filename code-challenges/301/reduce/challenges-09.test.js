@@ -154,16 +154,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  let average = 0;
-  average = arr.reduce( (acc, cv, i, arr) => {
-    acc += cv;
-    if (i === arr.length - 1){
-      return acc/arr.length;
-    } else {
-      return acc;
-    }
-  }, 0);
-  return average;
+  let avg = arr.reduce( (acc, cv) => {
+    acc.sum += cv;
+    acc.count++;
+    return acc;
+  }, {count: 0, sum: 0});
+  return avg.sum / avg.count;
 };
 
 /* ------------------------------------------------------------------------------------------------
