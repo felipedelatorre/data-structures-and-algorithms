@@ -162,7 +162,7 @@ const calculateAverage = (arr) => {
     } else {
       return acc;
     }
-  });
+  }, 0);
   return average;
 };
 
@@ -186,11 +186,8 @@ const countPrimeNumbers = (arr) => {
   totalPrimes = arr.reduce( (acc, cv) => {
     if (isPrime(cv)) {  
       acc = acc + 1;
-      console.log(`primes ${cv} and count is at ${acc}`);
-
       return acc;
-    } else { 
-      console.log(`non-primes ${cv}`)
+    } else {
       return acc;
     }
   }, 0);
