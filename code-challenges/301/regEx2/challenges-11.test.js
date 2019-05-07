@@ -7,12 +7,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  let x = /^\d{4}$/;
-  if (x.test(pin)) {
-    return true;
-  } else {
-    return false;
-  }
+  let regEx = /^\d{4}$/;
+  return regEx.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +47,8 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  let regEx = /^(\d{3}|\(\d{3}\))-? ?\d{3}-? ?\d{4}$/;
+  return regEx.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
