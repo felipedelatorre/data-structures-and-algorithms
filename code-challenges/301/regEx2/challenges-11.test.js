@@ -7,7 +7,12 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let x = /^\d{4}$/;
+  if (x.test(pin)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +29,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  let regEx = /^(\w+)(.\w+)?@(\w+)(\.)(com|net|org)$/;
+  return regEx.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
