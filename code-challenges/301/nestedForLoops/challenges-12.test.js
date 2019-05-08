@@ -152,9 +152,19 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
-};
+  let count = 0;
+  let lowest = 0;
+  for (let i = 0; i < weather.length; i++) {
+    count = weather[i].length;
+    let avg = weather[i].reduce((acc, cur) => {
+      return acc + cur;
+    });
+    if (lowest === 0 || lowest > avg / count)
+      lowest = avg / count;
+  }
 
+  return lowest;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
 Write a function called excel that accepts a string representing rows and columns in a table.
@@ -164,9 +174,20 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
-};
+  let arr = str.split('');
+  let result = [0, 0, 0];
+  let index = 0;
 
+  arr.forEach(item => {
+    if (item === '\n') {
+      index += 1;
+    } else if (item !== ',') {
+      result[index] += Number(item);
+    }
+  });
+
+  return result;
+};
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
