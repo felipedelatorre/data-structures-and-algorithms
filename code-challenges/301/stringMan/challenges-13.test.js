@@ -53,7 +53,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let allHappyFaces = true;
+  arr.forEach(element => {
+    if (!element.includes(':)')) {
+      allHappyFaces = false;
+    }
+  });
+  return allHappyFaces;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,7 +68,13 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  return arr.reduce((acc, cv) => {
+    if(cv.includes(target)) {
+      acc.push(cv);
+    }
+    return acc;
+  }, []);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
