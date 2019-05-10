@@ -88,13 +88,13 @@ let biggerThanLuke = (arr) => {
   }
 
   let lukesMass = arr[0].mass;
- let newArray = arr.reduce((acc, cv) => {
+  let newArray = arr.reduce((acc, cv) => {
     if(Number(cv.mass) > lukesMass) {
       acc.push(cv.name);
     }
-    return acc
-  }, [])
-return newArray.join(' - ');
+    return acc;
+  }, []);
+  return newArray.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
