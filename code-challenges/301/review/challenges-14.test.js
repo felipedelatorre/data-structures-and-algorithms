@@ -83,7 +83,18 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  if (arr.length < 1 || arr == undefined){
+    return '';
+  }
+
+  let lukesMass = arr[0].mass;
+ let newArray = arr.reduce((acc, cv) => {
+    if(Number(cv.mass) > lukesMass) {
+      acc.push(cv.name);
+    }
+    return acc
+  }, [])
+return newArray.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +110,33 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  let newArray = arr;
+  if (property === 'name') {
+    newArray.sort( (a, b) => {
+      if (a.name < b.name){
+        return -1;
+      }
+      if (a.name > b.name){
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  if (property === 'price') {
+    newArray.sort( (a, b) => {
+      if (a.price < b.price){
+        return -1;
+      }
+      if (a.price > b.price){
+        return 1;
+      }
+      return 0;
+    });
+  }
+
+  return newArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,9 +149,12 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
+  if(url.includes('https://')){
+    return true;
+  }else{
+    return false;
+  }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
