@@ -3,14 +3,7 @@
 
 
 
-const divisibleByFiveTwoToThePower = (input) => {
-  return input.map( arrays => {
-    arrays = arrays.filter(divByFive => {
-      return typeof divByFive === 'number' && divByFive % 5 === 0;
-    });
-    return arrays.map(byPowerOfTwo => Math.pow(2, byPowerOfTwo));
-  });
-};
+
 
 
 let findMaleAndFemale = (data) => {

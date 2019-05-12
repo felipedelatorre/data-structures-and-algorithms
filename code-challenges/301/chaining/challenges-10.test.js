@@ -38,7 +38,14 @@ This function should first remove any elements that are not numbers or are not d
 This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
-
+const divisibleByFiveTwoToThePower = (input) => {
+  return input.map( arrays => {
+    arrays = arrays.filter(divByFive => {
+      return typeof divByFive === 'number' && divByFive % 5 === 0;
+    });
+    return arrays.map(byPowerOfTwo => Math.pow(2, byPowerOfTwo));
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
