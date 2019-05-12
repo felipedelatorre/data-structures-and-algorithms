@@ -22,7 +22,14 @@ Write a function that, given an array of integer arrays as input, calculates the
 You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
+const totalSum = (input) => {
+  return input.reduce((accumulator, array) => {
+    return accumulator += array.reduce((acc, int) => {
+      return acc += int;
+    },0);
+  }, 0);
 
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3

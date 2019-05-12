@@ -1,13 +1,6 @@
 
 
-const totalSum = (input) => {
-  return input.reduce((accumulator, array) => {
-    return accumulator += array.reduce((acc, int) => {
-      return acc += int;
-    },0);
-  }, 0);
 
-};
 
 
 const divisibleByFiveTwoToThePower = (input) => {
