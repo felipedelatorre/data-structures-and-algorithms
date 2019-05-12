@@ -123,6 +123,12 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 // My function
+let findShortest = (data) => {
+  return data.reduce((acc, cv) => {
+    if (acc.height < cv.height) acc = cv;
+    return acc;
+  }).name;
+};
 
 //// Daniel Breoti's function
 // starWarsData.sort((a, b) => a.height - b.height).shift().name;
