@@ -106,6 +106,13 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+let findMaleAndFemale = (data) => {
+  return data.reduce((acc, cv) => {
+    if(cv.gender === 'male' || cv.gender === 'female') acc.push(cv.name);
+    return acc;
+  }, []).join(' and ');
+};
+
 
 // Daniel Breoti's function 
 //starWarsData.filter((char) => char.gender !== 'n/a').map((char) => char.name)
