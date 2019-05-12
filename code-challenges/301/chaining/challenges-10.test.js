@@ -8,8 +8,12 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  
-
+  return input.reduce((accumulator, arr) => {
+    accumulator += arr.reduce((acc, int) => {
+      return target === int ? acc += 1 : acc;
+    }, 0);
+    return accumulator;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -18,21 +22,29 @@ Write a function that, given an array of integer arrays as input, calculates the
 You may want to use filter, map, or reduce for this problem, but are not required to. You may need to use the same method more than once.
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
-
 const totalSum = (input) => {
-  // Solution code here...
+  return input.reduce((accumulator, array) => {
+    return accumulator += array.reduce((acc, int) => {
+      return acc += int;
+    },0);
+  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 Write a function named divisibleByFiveTwoToThePower that accepts an array of arrays as input.
-This function should first remove any elements that are not numbers or are not divisible by five.
+This function should first remove any elements that are not numbers or are not divisible by five.~
 This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
-
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map( arrays => {
+    arrays = arrays.filter(divByFive => {
+      return typeof divByFive === 'number' && divByFive % 5 === 0;
+    });
+    return arrays.map(byPowerOfTwo => Math.pow(2, byPowerOfTwo));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -95,17 +107,31 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.reduce((acc, cv) => {
+    if(cv.gender === 'male' || cv.gender === 'female') acc.push(cv.name);
+    return acc;
+  }, []).join(' and ');
 };
+
+
+// Daniel Breoti's function 
+//starWarsData.filter((char) => char.gender !== 'n/a').map((char) => char.name)
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
+// My function
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((acc, cv) => {
+    if (acc.height < cv.height) acc = cv;
+    return acc;
+  }).name;
 };
+
+//// Daniel Breoti's function
+// starWarsData.sort((a, b) => a.height - b.height).shift().name;
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
