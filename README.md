@@ -1,7 +1,4 @@
 # data-structures-and-algorithms
-Daily Code Challenges
-
-# data-structures-and-algorithms
 Data structures and algorithms practice
 
 # 301 Challenges:
