@@ -1,6 +1,7 @@
 'use strict';
 
-function binarySearch(sortedArr, target){
+module.exports = function binarySearch(sortedArr, target){
+  // if(!sortedArr.map(el => {typeof el;}).includes('string')) return null;
   let left = 0;
   let right = sortedArr.length - 1;
   while(left <= right){
@@ -14,4 +15,4 @@ function binarySearch(sortedArr, target){
     }
   }
   return -1;
-}
+};
