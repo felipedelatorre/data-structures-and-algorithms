@@ -18,4 +18,6 @@ Data structures and algorithms practice
 * [value-vs-reference](./code-challenges/301/value-vs-reference)
 
 # 401 Challenges
-* [array_reverse](./code-challenges/401/array_reverse)
+* [array_reverse](./code-challenges/401/arrayReverse)
+* [array_shift](./code-challenges/401/arrayShift)
+* [array_binary_shift](./code-challenges/401/arrayBinarySearch)
