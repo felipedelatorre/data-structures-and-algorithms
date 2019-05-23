@@ -8,4 +8,4 @@ Write a function called insertShiftArray which takes in an array and the value t
 for loops without using any built-in functions
 
 ## Solution
-[Whiteboard](./assets/array-shift.jpg)
+[Whiteboard](/assets/array-shift.jpg)
