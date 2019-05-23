@@ -7,6 +7,6 @@ Write a function called reverseArray which takes an array as an argument. Withou
 I whiteboarded the challenge and did a little bit of testing on repl.it
 
 ## Solution
-![Whiteboard](/assets/array-reverse.jpg)
+![Whiteboard](./assets/array-reverse.jpg)
 
-![Whiteboard](/assets/array-reverse_2.jpg)
+![Whiteboard](./assets/array-reverse_2.jpg)
