@@ -18,12 +18,11 @@ describe('ArrayBinarySearch', () => {
     expect(arrayBinarySearch(array, target)).toEqual(1);
   });
 
-  // it('should return null if not all numbers', () => {
-  //   let array = [1,4,60,90,99,100,'101'];
-  //   let target = 4;
+  it('should return null if not all numbers', () => {
+    let array = [1,4,60,90,99,100,'101'];
+    let target = 4;
 
-  //   expect(arrayBinarySearch(array, target)).toEqual(null);
-  // });
-
+    expect(arrayBinarySearch(array, target)).toEqual(null);
+  });
 
 });
