@@ -1,4 +1,4 @@
-# data-structures-and-algorithms
+# Data Structures and Algorithms
 Data structures and algorithms practice
 
 # 301 Challenges:
