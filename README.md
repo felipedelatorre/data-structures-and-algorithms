@@ -1,6 +1,12 @@
 # Data Structures and Algorithms
 Data structures and algorithms practice
 
+# 401 Challenges
+* [array_reverse](./code-challenges/401/arrayReverse)
+* [array_shift](./code-challenges/401/arrayShift)
+* [array_binary_shift](./code-challenges/401/arrayBinarySearch)
+* [DS linked list](./code-challenges/401/dataStructures/linkedList)
+
 # 301 Challenges:
 * [ArrayFilter](./code-challenges/301/arrayFilter)
 * [ArrayMap](./code-challenges/301/arrayM)
@@ -16,9 +22,3 @@ Data structures and algorithms practice
 * [stringMan](./code-challenges/301/stringMan)
 * [stringMethods](./code-challenges/301/stringMethods)
 * [value-vs-reference](./code-challenges/301/value-vs-reference)
-
-# 401 Challenges
-* [array_reverse](./code-challenges/401/arrayReverse)
-* [array_shift](./code-challenges/401/arrayShift)
-* [array_binary_shift](./code-challenges/401/arrayBinarySearch)
-* [DS linked list](./code-challenges/401/dataStructures/linkedList)
