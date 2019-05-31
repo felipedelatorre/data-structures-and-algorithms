@@ -29,6 +29,7 @@ class Linkedlist {
   print(){
     let current = this.head;
     while(current){
+      console.log(current.value);
       current = current.next;
     }
   }
@@ -36,7 +37,7 @@ class Linkedlist {
   includes(value){
     let current = this.head;
     let result = false;
-    while(current.next !== null){
+    while(current){
       if(current.value === value){
         result = true;
       }
