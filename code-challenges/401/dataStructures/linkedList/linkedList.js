@@ -14,7 +14,13 @@ class Linkedlist {
 
   insert(value){
     let node = new Node(value);
-    this.head = node;
+
+    if(!this.head){
+      this.head = node;
+    } else{
+      node.next = this.head;
+      this.head = node;
+    }
   }
 
   append(value){
@@ -24,6 +30,38 @@ class Linkedlist {
       current = current.next;
     }
     current.next = node;
+  }
+
+
+  insertAfter(value, newValue){
+    let node = new Node(newValue);
+    let current = this.head;
+
+    while(current.value !== value){
+      current = current.next;
+    }
+
+    let temp = current.next;
+    current.next = node;
+    current.next.next = temp;
+  }
+
+
+  insertBefore(value, newValue){
+    let node = new Node(newValue);
+    let current = this.head;
+
+    if(this.head.value === value){
+      this.insert(newValue);
+      return newValue.value;
+    } else{
+      while(current.next.value !== value){
+        current = current.next;
+      }
+      let temp = current.next;
+      current.next = node;
+      node.next = temp;
+    }
   }
 
   print(){
