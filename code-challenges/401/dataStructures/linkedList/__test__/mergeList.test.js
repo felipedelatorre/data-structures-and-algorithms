@@ -23,23 +23,37 @@ describe('Funtions outside of the linkedList', () => {
 
     // Assert
     expect(listC).toBeInstanceOf(LinkedList);
-    
   });
 
   it('should contain node values from both lists', () => {
-    // Arrenge
+    // Arrange
     listA.insert(1);
     listB.insert(2);
 
     // Act
     listC = merge(listA, listB);
+
     // Assert
     expect(listC.includes(1)).toBeTruthy();
     expect(listC.includes(2)).toBeTruthy();
-
   });
 
+  it('should last node in new list be null', () => {
+    // Arrange
+    listA.insert(1);
+    listB.insert(2);
 
+    // Act
+    listC = merge(listA, listB);
+    let current = listC.head;
+    while(current.next){
+      current = current.next;
+    }
+
+    // Assert
+    expect(current.value).toBe(1);
+    expect(current.next).toBeNull();
+  });
 
 
 });
