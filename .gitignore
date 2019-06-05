@@ -1,11 +1,14 @@
 
 # Created by https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
 
+<<<<<<< Updated upstream
 
 ### Testing gitignore ###
 package-lock.json
 package.json
 
+=======
+>>>>>>> Stashed changes
 ### Linux ###
 *~
 
@@ -230,5 +233,8 @@ $RECYCLE.BIN/
 *.lnk
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode
