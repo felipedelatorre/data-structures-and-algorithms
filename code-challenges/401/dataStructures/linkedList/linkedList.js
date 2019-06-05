@@ -83,6 +83,31 @@ class Linkedlist {
     }
     return result;
   }
+
+  nthFromEnd(k){
+    let length = -1;
+    let current = this.head;
+
+    while(current){
+      length++;
+      current = current.next;
+    }
+
+    if(-1 > k || k > length){
+      throw 'Please check input value';
+    }
+
+    let iterator = length - k;
+
+    current = this.head;
+
+    for(let i = 0; i < iterator; i++){
+      current = current.next;
+    }
+    return current.value;
+
+  }
+
 }
 
 module.exports = Linkedlist;
