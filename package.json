@@ -1,20 +1,25 @@
 {
-  "name": "3-code-challenges",
+  "name": "data-structures-and-algorithms",
   "version": "1.0.0",
-  "description": "",
+  "description": "Data structures and algorithms practice",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "lint": "eslint **/*.js",
-    "test": "jest --verbose --coverage",
-    "test-watch": "jest --watchAll --verbose --coverage",
-    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+    "test": "jest",
+    "test-watch": "jest --watchAll",
+    "lint": "eslint \"*/**.js\" "
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipedelatorre/data-structures-and-algorithms.git"
+  },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipedelatorre/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/felipedelatorre/data-structures-and-algorithms#readme",
   "dependencies": {
     "eslint": "^5.16.0",
-    "jest": "^24.1.0"
+    "jest": "^24.8.0"
   }
 }

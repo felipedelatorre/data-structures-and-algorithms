@@ -6,7 +6,6 @@ class Queue{
   constructor(){
     this.front = null;
   }
-
   enqueue(item){
     let node = new Node(item);
     let curr = this.front;
