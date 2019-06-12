@@ -1,6 +1,8 @@
 'use strict';
 
 const Animal = require('./animal');
+const Dog = Animal.Dog;
+const Cat = Animal.Cat;
 
 
 class AnimalShelter{
@@ -10,27 +12,52 @@ class AnimalShelter{
 
 
   enqueue(type){
-    _validate(type) ? type = _capitalizeFirstLetter(type) : null;
-    let animal = new Animal.Dog;
-    this.first = animal;
+    let animal;
+    if (type === 'dog') {
+      animal = new Dog;
+    } else if(type === 'cat'){
+      animal = new Cat;
+    } else{
+      return null;
+    }
+
+    if(this.first === null){
+      this.first = animal;
+    } else{
+      let current = this.first;
+      while(current.next){
+        current = current.next;
+      }
+      current.next = animal;
+    }
 
 
   }
 
-  dequeue(pref){
-    this.front = this.front.next;
-  }
+  // dequeue(type){
+  //   if (type === 'dog') {
+
+  //     let current = this.first;
+  //     if (current instanceof Dog)
+
+
+
+  //   } else if(type === 'cat'){
+  //     // do something
+  //   } else{
+  //     return null;
+  //   }
+  // }
 
 
 }
 
 
 function _validate(type){
-  if (type === 'dog' || type === 'cat'){
-    return true;
-  } else{
-    return false;
+  if (type !== 'dog' || type !== 'cat'){
+    return null;
   }
+
 }
 
 function _capitalizeFirstLetter(string) {
