@@ -1,5 +1,5 @@
 function multiBracketValidation(string){
-  let brackets = ['(',')','[',']','{','}',]
+  let brackets = ['(',')','[',']','{','}',];
   let stringArr = string.split('');
   let bracketArr = [];
 
