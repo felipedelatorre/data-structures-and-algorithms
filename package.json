@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Data structures and algorithms practice",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watchAll",
