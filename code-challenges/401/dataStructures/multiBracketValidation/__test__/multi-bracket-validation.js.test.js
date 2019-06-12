@@ -2,9 +2,9 @@
 
 const multiBracketValidation = require('../multi-bracket-validation.js');
 
-describe('nameOfChallenge\'s Description ', () => {
+describe('multiBracketValidation', () => {
 
-  it('', () => {
+  it('multiBracketValidation', () => {
     expect().toEqual();
   });
 
