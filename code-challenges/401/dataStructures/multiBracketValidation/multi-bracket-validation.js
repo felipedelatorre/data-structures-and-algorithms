@@ -9,17 +9,20 @@ function multiBracketValidation(string){
       bracketArr.push(stringArr[i]);
     }
   }
-  console.log(bracketArr);
   if(bracketArr.length % 2 === 1){
     return false;
   }
 
-  let end = bracketArr.length;
+  let end = bracketArr.length - 1;
+  
+  for(let start = 0; start < end; start++){
 
-  for(let start = 0; start <= end; start++){
     if(bracketArr[start] !== bracketArr[end]){
+      
+      console.log(bracketArr[start],bracketArr[end]);
       return false;
     } else{
+      // console.log('here');
       end--;
     }
   }
