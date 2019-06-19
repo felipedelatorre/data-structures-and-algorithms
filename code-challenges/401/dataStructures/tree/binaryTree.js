@@ -63,6 +63,19 @@ class binaryTree{
     return result;
   }
 
+
+  breadthFirst(tree) {
+    let queue = [tree.root];
+    let currentNode = queue.shift();
+
+    while (currentNode) {
+      console.log(currentNode.value);
+      queue.push(currentNode.left);
+      queue.push(currentNode.right);
+      currentNode = queue.shift();
+    }
+  }
+
 }
 
 
