@@ -18,7 +18,7 @@ class binaryTree{
       if (node.left) _walk(node.left);
 
       // right
-      if (node.right) _walk(node.right);      
+      if (node.right) _walk(node.right);
     };
     _walk(this.root);
     return result;
@@ -75,6 +75,23 @@ class binaryTree{
       currentNode = queue.shift();
     }
   }
+
+  findMaximumValue(tree) {
+    let queue = [tree.root];
+    let currentNode = queue.shift();
+    let maxVal = tree.root.value;
+    while (currentNode) {
+      if(currentNode.value > maxVal){
+        maxVal = currentNode.value;
+      }
+      queue.push(currentNode.left);
+      queue.push(currentNode.right);
+      currentNode = queue.shift();
+    }
+    return maxVal;
+
+  }
+
 
 }
 
