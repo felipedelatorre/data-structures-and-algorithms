@@ -5,7 +5,11 @@ Implement a Singly Linked List Data Structure
 O(n)
 
 ## Assets
-append and Insert
+Append and Insert
 ![](./assets/appendandInsert.jpg)
-merge
+
+Merge
 ![](./assets/merge.jpg)
+
+kthFromEnd
+![](./assets/kthFromEnd.jpg)
