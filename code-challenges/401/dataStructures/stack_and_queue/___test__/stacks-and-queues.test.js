@@ -7,7 +7,7 @@ describe('Stack and Queues', () => {
 
   let stack;
 
-  describe('Name of the group', () => {
+  describe('Stack', () => {
 
     beforeEach(() => {
       stack = new Stack();
@@ -32,6 +32,12 @@ describe('Stack and Queues', () => {
       stack.push(5);
       stack.pop();
       expect(stack.top.value).toBe(4);
+    });
+
+    it('Can successfully pop off the stack and return that value', () => {
+      stack.push(4);
+      stack.push(5);
+      expect(stack.pop()).toBe(5);
     });
 
 
@@ -85,6 +91,11 @@ describe('Stack and Queues', () => {
       expect(queue.front.value).toBe(6);
     });
 
+    it('Can successfully dequeue off of a queue the expected value', () => {
+      queue.enqueue(5);
+      queue.enqueue(6);
+      expect(queue.dequeue()).toBe(5);
+    });
 
     it('Can successfully peek into a queue, seeing the expected value', () => {
       queue.enqueue(5);
