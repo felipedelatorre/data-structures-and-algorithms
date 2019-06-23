@@ -7,9 +7,17 @@ class Animal {
 }
 
 class Dog extends Animal{
+  constructor(){
+    super();
+    this.type = 'dog';
+  }
 }
 
 class Cat extends Animal{
+  constructor(){
+    super();
+    this.type = 'cat';
+  }
 }
 
 module.exports = {Dog, Cat};
