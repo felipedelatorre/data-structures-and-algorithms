@@ -4,9 +4,7 @@ const BreadthFirst = require('../tree');
 const Node = require('../node');
 
 describe('Name of the group', () => {
-
   let bt;
-
   beforeEach(() => {
     bt = new BreadthFirst();
 
@@ -31,9 +29,15 @@ describe('Name of the group', () => {
   //    4    20
   });
 
-  it('should be an instance of BreadthFirst ', () => {
+  it('should be an instance of BreadthFirst', () => {
     // Assert
     expect(bt).toBeInstanceOf(BreadthFirst);
+  });
+
+  it('should return string if tree is empty', () => {
+    let emptyBt = new BreadthFirst();
+    let result = emptyBt.breadthFirst(emptyBt);
+    expect(result).toBe('This Tree is empty');
   });
 
   it('should console.log', () => {

@@ -2,69 +2,47 @@
 
 class binaryTree{
   constructor(node){
-    this.root = node;
+    this.root = node || null;
   }
 
   preOrder(){
     let result= [];
-
     let _walk = node => {
-      // L R Ro
-
-      // Ro
-      result.push(node.value);
-
-      // Left
-      if (node.left) _walk(node.left);
-
-      // right
-      if (node.right) _walk(node.right);
+      result.push(node.value); // Ro
+      if (node.left) _walk(node.left); // L
+      if (node.right) _walk(node.right); //R
     };
     _walk(this.root);
+
     return result;
   }
 
   postOrder(){
     let result= [];
-
-    // L R Ro
     let _walk = node => {
-
-      // Left
-      if (node.left) _walk(node.left);
-
-      // right
-      if (node.right) _walk(node.right);
-
-      // Ro
-      result.push(node.value);
+      if (node.left) _walk(node.left); // L
+      if (node.right) _walk(node.right); // R
+      result.push(node.value); // Ro
     };
     _walk(this.root);
+
     return result;
   }
 
   inOrder(){
     let result= [];
-
-    // L Ro R
     let _walk = node => {
-
-      // Left
-      if (node.left) _walk(node.left);
-
-      // Ro
-      result.push(node.value);
-
-      // right
-      if (node.right) _walk(node.right);
-
+      if (node.left) _walk(node.left); // L
+      result.push(node.value); // Ro
+      if (node.right) _walk(node.right); // R
     };
     _walk(this.root);
+
     return result;
   }
 
-
   breadthFirst(tree) {
+    if(tree.root === null) return 'This Tree is empty';
     let queue = [tree.root];
     let currentNode = queue.shift();
 
@@ -88,13 +66,9 @@ class binaryTree{
       queue.push(currentNode.right);
       currentNode = queue.shift();
     }
+
     return maxVal;
-
   }
-
-
 }
-
-
 
 module.exports = binaryTree;
