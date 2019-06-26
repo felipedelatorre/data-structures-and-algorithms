@@ -7,6 +7,7 @@ Data structures and algorithms practice
 * [array_binary_shift](./code-challenges/401/arrayBinarySearch)
 * [DS linked list](./code-challenges/401/dataStructures/linkedList)
 * [fizzBuzz Tree](./code-challenges/401/dataStructures/fizzBuzzTree)
+* [fizzBuzz Tree](./code-challenges/401/dataStructures/tree)
 
 
 # 301 Challenges:
