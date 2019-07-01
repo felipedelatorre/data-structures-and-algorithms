@@ -1,23 +1,26 @@
-# Summary and name of challenge
-<!-- Short summary or background information -->
+# insertion Sort Assigment
+Complete a working, tested implementation of Insertion Sort, based on the pseudo code provided
 
 ## Challenge
-<!-- Description of the challenge -->
+Complete a working, tested implementation of Insertion Sort, based on the pseudo code provided
+
+Research and prepare a lecture on the Insertion Sort Algorithm suitable for delivery to 301 level student. Your lecture notes should be the only material an instructor should need to conduct a high quality lecture on the subject.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+O(n). This algorithm will take as long as there are items in the array
 
 ## Solution
-<!-- Embedded whiteboard image -->
+```
+InsertionSort(int[] arr)
 
-
- - [ ] Top-level README “Table of Contents” is updated
- - [ ] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
- - [ ] README for this challenge is complete
-     - [ ] Summary, Description, Approach & Efficiency, Solution
-     - [ ] Link to code
-     - [ ] Picture of whiteboard
+  FOR i = 1 to arr.length
+  
+    int j <-- i - 1
+    int temp <-- arr[i]
+    
+    WHILE j >= 0 AND temp < arr[j]
+      arr[j + 1] <-- arr[j]
+      j <-- j - 1
+      
+    arr[j + 1] <-- temp
+```
