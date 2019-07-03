@@ -59,7 +59,7 @@ module.exports = exports = (arr) => {
 
 ### Read
   * <sup>1</sup> [Geeks for Geeks - Insertion Sort](https://www.geeksforgeeks.org/insertion-sort/)
-  * <sup>2</sup> [Wikipedia - Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) 
+  * [Wikipedia - Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort) 
 
 ### Bookmark
 * [Data Structure and Algorithms Insertion Sort](https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm)
