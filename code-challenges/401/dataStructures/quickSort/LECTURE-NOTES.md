@@ -1,6 +1,6 @@
-# Merge Sort
+# Quick Sort
 ## Learning Objectives
-Merge sort is one of the most popular sorting algorithms today and it uses the concept of divide and conquer to sort a list of elements. Meaning, it will divide the bigger problem into smaller problems and then solve each of the small problems in order to solve the bigger problem that we started out with. <sup>1<sup>
+Quick Sort algorithm is one of the most used and popular algorithms in any programming language. But, if you are a JavaScript developer, then you might of heard of sort() which is already available in JavaScript. Then, you might have been thinking what the need of this Quick Sort algorithm is. To understand this, first we need what is sorting and what is the default sorting in JavaScript. <sup>1<sup>
 
 ## Lecture Flow
 * Diagram
@@ -10,100 +10,106 @@ Merge sort is one of the most popular sorting algorithms today and it uses the c
 * Reading and References
 
 ## Diagram
-![](./assets/mergeSort.png)
+![](./assets/quickSort.png)
 
 ## Algorithm
-* Split array in half
-* Keep spliting until the array contains one element
-* Order the remaining elements by value
-* Repeat until they are in order
+* Pick a “pivot” element.
+* “Partition” the array into 3 parts:
+  * First part: all elements in this part is less than the pivot.
+  * Second part: the pivot itself (only one element!)
+  * Third part: all elements in this part is greater than or equal to the pivot.
+* Then, apply the quicksort algorithm to the first and the third part. (recursively)<sup>2<sup>
 
 ## Pseudocode
 ```
-ALGORITHM Mergesort(arr)
-    DECLARE n <-- arr.length
-           
-    if n > 1
-      DECLARE mid <-- n/2
-      DECLARE left <-- arr[0...mid]
-      DECLARE right <-- arr[mid...n]
-      // sort the left side
-      Mergesort(left)
-      // sort the right side
-      Mergesort(right)
-      // merge the sorted left and right sides together
-      Merge(left, right, arr)
+ALGORITHM QuickSort(arr, left, right)
+    if left < right
+        // Partition the array by setting the position of the pivot value 
+        DEFINE position <-- Partition(arr, left, right)
+        // Sort the left
+        QuickSort(arr, left, position - 1)
+        // Sort the right
+        QuickSort(arr, position + 1, right)
 
-ALGORITHM Merge(left, right, arr)
-    DECLARE i <-- 0
-    DECLARE j <-- 0
-    DECLARE k <-- 0
+ALGORITHM Partition(arr, left, right)
+    // set a pivot value as a point of reference
+    DEFINE pivot <-- arr[right]
+    // create a variable to track the largest index of numbers lower than the defined pivot
+    DEFINE low <-- left - 1
+    for i <- left to right do
+        if arr[i] <= pivot
+            low++
+            Swap(arr, i, low)
 
-    while i < left.length && j < right.length
-        if left[i] <= right[j]
-            arr[k] <-- left[i]
-            i <-- i + 1
-        else
-            arr[k] <-- right[j]
-            j <-- j + 1
-            
-        k <-- k + 1
+     // place the value of the pivot location in the middle.
+     // all numbers smaller than the pivot are on the left, larger on the right. 
+     Swap(arr, right, low + 1)
+    // return the pivot index point
+     return low + 1
 
-    if i = left.length
-       set remaining entries in arr to remaining values in right
-    else
-       set remaining entries in arr to remaining values in left
+ALGORITHM Swap(arr, i, low)
+    DEFINE temp;
+    temp <-- arr[i]
+    arr[i] <-- arr[low]
+    arr[low] <-- temp
 ```
 
 ### Code
 ```Javascript
-exports.mergeSort = (unsortedArray) => {
+exports.quickSort = (arr, left, right) => {
 
-  if(unsortedArray.some(isNaN)){
+  if(arr.some(isNaN)){
     throw new Error('Not all elements are numbers');
   }
 
-  if (unsortedArray.length <= 1) {
-    return unsortedArray;
+  let position;
+  if (left < right) {
+    position = partition(arr, left, right);
+    exports.quickSort(arr, left, position - 1);
+    exports.quickSort(arr, position + 1, right);
   }
-  const middle = Math.floor(unsortedArray.length / 2);
-
-  const left = unsortedArray.slice(0, middle);
-  const right = unsortedArray.slice(middle);
-
-  return _merge(
-    exports.mergeSort(left), exports.mergeSort(right)
-  );
+  return arr;
 };
 
-function _merge (left, right) {
-  let resultArray = [], leftIndex = 0, rightIndex = 0;
-
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      resultArray.push(left[leftIndex]);
-      leftIndex++;
-    } else {
-      resultArray.push(right[rightIndex]);
-      rightIndex++;
+function partition(arr, left, right) {
+  let pivot = arr[Math.floor((right + left) / 2)],
+    i = left,
+    j = right;
+  while (i <= j) {
+    while (arr[i] < pivot) {
+      i++;
+    }
+    while (arr[j] > pivot) {
+      j--;
+    }
+    if (i <= j) {
+      swap(arr, i, j);
+      i++;
+      j--;
     }
   }
+  return i;
+}
 
-  return resultArray
-    .concat(left.slice(leftIndex))
-    .concat(right.slice(rightIndex));
+function swap(arr, i, low){
+  let temp = arr[i];
+  arr[i] = arr[low];
+  arr[low] = temp;
 }
 ```
 
 ## Readings and References
 
 ### Watch
-* [Geeks for Geeks - Merge Sort](https://www.youtube.com/watch?v=JSceec-wEyw)
+* [HackerRank - Algorithms: Quicksort](https://www.youtube.com/watch?v=SLauY6PpjW4&t=37s)
 
 ### Read
-  * <sup>1</sup> [Medium - Merge Sort Algorithm in JavaScript](https://medium.com/javascript-in-plain-english/javascript-merge-sort-3205891ac060)
-  * [Geeks for Geeks - Merge Sort](https://www.geeksforgeeks.org/merge-sort/) 
+  * <sup>1</sup> [Guru99 - QuickSort Algorithm in JavaScript](https://www.guru99.com/quicksort-in-javascript.html)
+
+  * <sup>2</sup> [Understanding Quicksort](https://me.dt.in.th/page/Quicksort/)
+
+  * [GeeksForGeeks - QuickSort](https://www.geeksforgeeks.org/quick-sort/) 
 
 ### Bookmark
-* [Merge sort](https://en.wikipedia.org/wiki/Merge_sort)
+* [Hackerearth - QuickSort](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/tutorial/)
 
