@@ -1,9 +1,9 @@
 'use strict';
 
-const mergeSort = require('../mergeSort');
-const mergeFunction = mergeSort.mergeSort;
+const quickSortFunction = require('../quickSort');
+const quickSort = quickSortFunction.quickSort;
 
-describe('merge Sort\'s Description ', () => {
+describe('quickSort\'s Description ', () => {
 
   let array;
 
@@ -12,7 +12,7 @@ describe('merge Sort\'s Description ', () => {
   });
 
   it('should sort', () => {
-    let newArray = mergeFunction(array);
+    let newArray = quickSort(array, 0, array.length - 1);
     console.log(newArray);
     expect(newArray[0]).toBe(1);
     expect(newArray[1]).toBe(2);
@@ -22,14 +22,14 @@ describe('merge Sort\'s Description ', () => {
   it('should throw an error if an element is not number or cant be coerced into a number', () => {
     array = [3, 2, 'Hello!!!'];
     expect(() => {
-      mergeFunction(array).toThrow();
+      quickSort(array, 0, array.length - 1)(array).toThrow();
     });
   });
 
   it('should throw an error if the arg is not an array', () => {
     let string = 'Hello!!!';
     expect(() => {
-      mergeFunction(string).toThrow();
+      quickSort(array, 0, array.length - 1)(string).toThrow();
     });
   });
 
