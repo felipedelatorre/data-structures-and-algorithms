@@ -20,6 +20,14 @@ Quick Sort algorithm is one of the most used and popular algorithms in any progr
   * Third part: all elements in this part is greater than or equal to the pivot.
 * Then, apply the quicksort algorithm to the first and the third part. (recursively)<sup>2<sup>
 
+## Efficiency
+|Class|	Sorting algorithm|
+|---|---|
+|Worst-case performance|	O(n2)|
+|Best-case performance	|O(n log n) (simple partition) or O(n) (three-way partition and equal keys)
+|Average performance|	O(n log n)|
+|Worst-case space complexity|	O(n) auxiliary (naive), O(log n) auxiliary, (Sedgewick 1978)
+
 ## Pseudocode
 ```
 ALGORITHM QuickSort(arr, left, right)
