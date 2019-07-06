@@ -18,6 +18,15 @@ Merge sort is one of the most popular sorting algorithms today and it uses the c
 * Order the remaining elements by value
 * Repeat until they are in order
 
+## Efficiency
+|Class	| Sorting algorithm|
+|---|---|
+Data structure|	Array
+Worst-case performance|	O(n log n)
+Best-case performance	|O(n log n) typical, O(n) natural variant
+Average performance	|O(n log n)
+Worst-case space complexity|	О(n) total with O(n) auxiliary, O(1) auxiliary with linked lists[1]
+
 ## Pseudocode
 ```
 ALGORITHM Mergesort(arr)
