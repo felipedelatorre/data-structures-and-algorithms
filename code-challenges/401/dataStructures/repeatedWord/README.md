@@ -1,11 +1,13 @@
-# Summary and name of challenge
-<!-- Short summary or background information -->
+# Repeated word
+Return the first word that repeats on a string.
 
 ## Challenge
-<!-- Description of the challenge -->
+* Write a function that accepts a lengthy string parameter.
+* Without utilizing any of the built-in library methods available to your language, return the first word to occur more than once in that provided string.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+O(n) to add words
+O(1) to check if the word has been repeated
 
 ## Solution
 ![](./assets/repeatedWord.jpg)
@@ -30,16 +32,3 @@ const repeatedWords = (string) => {
   return 'No words found';
 };
 ```
-
-
-
- - [ ] Top-level README “Table of Contents” is updated
- - [ ] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
- - [ ] README for this challenge is complete
-     - [ ] Summary, Description, Approach & Efficiency, Solution
-     - [ ] Link to code
-     - [ ] Picture of whiteboard
