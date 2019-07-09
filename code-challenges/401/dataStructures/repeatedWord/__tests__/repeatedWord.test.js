@@ -3,7 +3,7 @@
 const repeatedWord = require('../repeatedWord');
 
 describe('repeatedWord\'s Description ', () => {
-  
+
   it('should return the only dup word available', () => {
     let string = 'a a';
     let result = repeatedWord.repeatedWords(string);

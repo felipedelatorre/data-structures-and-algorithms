@@ -3,7 +3,7 @@
 const HT = require('./hashTable');
 
 const _split = (string) =>{
-  let regex = /\b(\w+)\b/g
+  let regex = /\b(\w+)\b/g;
   return string.match(regex);
 };
 
