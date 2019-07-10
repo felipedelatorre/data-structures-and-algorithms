@@ -1,23 +1,56 @@
-# Summary and name of challenge
-<!-- Short summary or background information -->
+# Tree Insertion
+Given two binary trees - return an array of all duplicate values between the trees
 
 ## Challenge
-<!-- Description of the challenge -->
+* Write a function called tree_intersection that takes two binary tree parameters.
+* Without utilizing any of the built-in library methods available to your language, return a set of values found in both trees.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+* O(n) to add items to a hash table
+* O(n) to check for suplication 
 
 ## Solution
-<!-- Embedded whiteboard image -->
+```js
+const treeInsertion = (btA, btB) => {
+  let ht = new HT();
 
+  if(btA.root === null || btB.root === null){
+    throw new Error('No root value');
+  }
+  _addToHash(btA, ht);
 
- - [ ] Top-level README “Table of Contents” is updated
- - [ ] Feature tasks for this challenge are completed
- - [ ] Unit tests written and passing
-     - [ ] “Happy Path” - Expected outcome
-     - [ ] Expected failure
-     - [ ] Edge Case (if applicable/obvious)
- - [ ] README for this challenge is complete
-     - [ ] Summary, Description, Approach & Efficiency, Solution
-     - [ ] Link to code
-     - [ ] Picture of whiteboard
+  let result = _addDupsToArray(btB.root, ht);
+
+  return result;
+
+};
+
+const _addToHash = (bt, ht) => {
+  let arrayOfNumbers = bt.postOrder();
+  arrayOfNumbers.forEach(element => {
+    let key = element.toString();
+    ht.add(key, element);
+  });
+
+  return arrayOfNumbers;
+};
+
+const _addDupsToArray = (root, ht) => {
+  let result= [];
+  let _walk = node => {
+    if (node.left) _walk(node.left); // L
+    if (node.right) _walk(node.right); // R
+    let key = node.value.toString();
+    if(ht.contains(key)){
+      result.push(node.value);
+    } // Ro
+
+  };
+  _walk(root);
+
+  return result;
+};
+
+```
+
+![](./assets/treeInsertion.jpg)
