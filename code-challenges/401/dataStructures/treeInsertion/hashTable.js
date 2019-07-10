@@ -93,7 +93,6 @@ class HashTable {
 
   contains(key){
     if(!key) throw new Error('Invalid key provided');
-
     let index = this.hash(key);
 
     if(!this.buckets[index]){ return null; }
@@ -111,4 +110,4 @@ class HashTable {
   }
 }
 
-module.exports = { LinkedList, HashTable };
+module.exports = HashTable;

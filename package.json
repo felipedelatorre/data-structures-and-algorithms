@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "jest",
+    "testC": "jest --coverage", 
     "test-watch": "jest --watchAll",
     "lint": "eslint \"*/**.js\" "
   },
