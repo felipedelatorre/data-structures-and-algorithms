@@ -15,6 +15,8 @@ O(n) to add items to an array for comparison
 O(1) to make the the actual comparison
 
 ## Solution
+![](./assets/leftJoin.jpg)
+![](./assets/leftJoin2.jpg)
 ```Js
 module.exports = (htLeft, htRight) => {
 
