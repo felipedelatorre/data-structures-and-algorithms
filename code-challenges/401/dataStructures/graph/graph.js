@@ -1,5 +1,6 @@
 'use strict';
-const util = require('util');
+// Needs a Queue for BFS traversal
+const Queue = require('./queue');
 
 class Vertex {
   constructor(value){
@@ -74,12 +75,19 @@ class Graph {
         }else{
           visitedVertices.add(neighborVertex);
         }
-
         stack.push(neighborVertex);
         parentPath.set(neighborVertex, currentVertex);
-
       }
+    }
+  }
 
+  breadthFirstTraversal(){
+
+  }
+
+  printGraph(){
+    for (let [key, value] of this._adjacencyList) {
+      console.log(key.value, value);
     }
   }
 
@@ -88,38 +96,13 @@ class Graph {
     // For each key, print to screen
     // Print vertex in all edges
   }
+
+  prettyPrintAdjacencyMatrix(){
+    // Iterate over all keys in map
+    // For each key, print to screen
+    // Print vertex in all edges
+  }
+
 }
 
-
-const graph = new Graph();
-
-const eight = new Vertex(8);
-const six = new Vertex(6);
-const seven = new Vertex(7);
-const five = new Vertex(5);
-const three = new Vertex(3);
-const oh = new Vertex(0);
-const nine = new Vertex(9);
-
-graph.addVertex(eight);
-graph.addVertex(six);
-graph.addVertex(seven);
-graph.addVertex(five);
-graph.addVertex(three);
-graph.addVertex(oh);
-graph.addVertex(nine);
-
-graph.addDirectedEdge(eight, six);
-graph.addDirectedEdge(eight, five);
-graph.addDirectedEdge(six, seven);
-graph.addDirectedEdge(seven, five);
-graph.addDirectedEdge(five, three);
-graph.addDirectedEdge(three, oh);
-graph.addDirectedEdge(oh, nine);
-graph.addDirectedEdge(nine, eight);
-
-console.log(graph.getNeighbors(eight));
-
-console.log(util.inspect(graph.pathTo(eight, seven), false, null, true));
-
-module.exports = Graph;
+module.exports = {Graph, Vertex, Edge};
