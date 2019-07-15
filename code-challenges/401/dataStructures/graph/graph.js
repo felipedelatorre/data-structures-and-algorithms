@@ -60,7 +60,7 @@ class Graph {
     return result;
   }
 
-  
+
   size(){
     return this._adjacencyList.size;
   }
@@ -98,8 +98,52 @@ class Graph {
     }
   }
 
-  breadthFirstTraversal(){
+  // function to performs BFS
+  bfs(startingNode){
 
+    // create a visited array
+    var visited = [];
+    // for (var i = 0; i < this.size(); i++){
+    //   visited[i] = false;
+    // }
+
+    // Create an object for queue
+    var q = new Queue();
+
+    // add the starting node to the queue
+    // visited[startingNode] = true;
+    // console.log(visited);
+    // console.log(visited[startingNode]);
+    visited.push(startingNode);
+    q.enqueue(startingNode);
+    console.log(startingNode);
+
+    // loop until queue is element
+    while (q.peek()) {
+      // get the element from the queue
+      var getQueueElement = q.dequeue();
+
+      // passing the current vertex to callback funtion
+      // console.log(getQueueElement);
+
+      // get the adjacent list for current vertex
+      var get_List = this._adjacencyList.get(getQueueElement);
+      // console.log(get_List);
+      // loop through the list and add the element to the
+      // queue if it is not processed yet
+      for (let j in get_List) {
+        var neigh = get_List[j];
+        // console.log(get_List[j].vertex);
+        // console.log(visited[neigh]);
+        if (!visited.includes(neigh)) {
+          visited.push(neigh.vertex);
+          // visited[neigh] = true;
+          console.log(neigh.vertex);
+          console.log(visited);
+          q.enqueue(neigh);
+        }
+      }
+    }
   }
 
   printGraph(){

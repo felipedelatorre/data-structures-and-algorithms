@@ -55,9 +55,20 @@ describe('Graphs', () => {
     expect(graph.getNeighbors(oneVertex)).toEqual(expected);
   });
 
-  // it('Neighbors are returned with the weight between nodes included', () => {
-  //   expect().toEqual();
-  // });
+  it('Neighbors are returned with the weight between nodes included', () => {
+    let oneVertex = new Vertex('Airplane');
+    let twoVertex = new Vertex('Car');
+    let threeVertex = new Vertex('Train');
+    graph.addNode(oneVertex);
+    graph.addNode(twoVertex);
+    graph.addNode(threeVertex);
+    graph.addEdge(oneVertex, twoVertex);
+    graph.addEdge(oneVertex, threeVertex);
+
+
+    graph.bfs(oneVertex);
+    expect().toEqual();
+  });
 
   it('size() The proper size is returned, representing the number of nodes in the graph', () => {
     let oneVertex = new Vertex(1);
