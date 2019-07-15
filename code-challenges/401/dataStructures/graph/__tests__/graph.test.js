@@ -30,9 +30,9 @@ describe('Graphs', () => {
   });
 
   it('getNodes() A collection of all nodes can be properly retrieved from the graph', () => {
-    let oneVertex = new Vertex(1);
-    let twoVertex = new Vertex(2);
-    let threeVertex = new Vertex(3);
+    let oneVertex = new Vertex('Airplane');
+    let twoVertex = new Vertex('Car');
+    let threeVertex = new Vertex('Train');
     graph.addNode(oneVertex);
     graph.addNode(twoVertex);
     graph.addNode(threeVertex);
@@ -40,8 +40,8 @@ describe('Graphs', () => {
     graph.addEdge(oneVertex, threeVertex);
 
 
-    graph.printGraph();
-    // expect(graph.getNeighbors(oneVertex)).toEqual(expected);
+    let nodes = graph.getNodes();
+    expect(nodes).toEqual([ 'Airplane', 'Car', 'Train' ]);
   });
 
   it('getNeighbors() All appropriate neighbors can be retrieved from the graph', () => {

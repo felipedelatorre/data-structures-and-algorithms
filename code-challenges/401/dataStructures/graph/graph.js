@@ -50,9 +50,22 @@ class Graph {
     return [...this._adjacencyList.get(vertex)];
   }
 
+  getNodes(){
+    let nodes = [ ...this._adjacencyList.keys() ];
+    let result =[];
+    nodes.map(key => {
+      key = key.value;
+      result.push(key);
+    });
+    return result;
+  }
+
+  
   size(){
     return this._adjacencyList.size;
   }
+
+
 
   pathTo(startVertex, goalVertex){
     const stack = [];
