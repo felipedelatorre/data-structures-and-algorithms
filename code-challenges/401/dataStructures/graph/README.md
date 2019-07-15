@@ -4,34 +4,34 @@ A Graph is a non-linear data structure consisting of nodes and edges. The nodes 
 ## Challenge
 Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
 
-* AddNode()
+* addNode()
   * Adds a new node to the graph
   * Takes in the value of that node
   * Returns the added node
-* AddEdge()
+* addEdge()
   * Adds a new edge between two nodes in the graph
   * Include the ability to have a “weight”
   * Takes in the two nodes to be connected by the edge
   * Both nodes should already be in the Graph
-* GetNodes()
+* getNodes()
   * Returns all of the nodes in the graph as a collection (set, list, or similar)
-* GetNeighbors()
+* getNeighbors()
   * Returns a collection of nodes connected to the given node
   * Takes in a given node
   * Include the weight of the connection in the returned collection
-* Size()
+* size()
   * Returns the total number of nodes in the graph
 
 ## Approach & Efficiency
-* AddNode() -> O(1)
-* AddEdge() -> O(1)
-* GetNodes() -> O(n)
-* GetNeighbors() -> O(1)
-* Size() -> O(1)
+* addNode() -> O(1)
+* addEdge() -> O(1)
+* getNodes() -> O(n)
+* getNeighbors() -> O(1)
+* size() -> O(1)
 
 ## API
-* AddNode() -> O(1) Adds a vertex to the graph
-* AddEdge() -> O(1) Adds an edge to a vertex
-* GetNodes() -> Retruns a list of all vertexes
-* GetNeighbors(vertex) -> Returns all adjecent vertexes
-* Size() -> Gets the numbers of vertexes in the graph
+* addNode() -> O(1) Adds a vertex to the graph
+* addEdge() -> O(1) Adds an edge to a vertex
+* getNodes() -> Retruns a list of all vertexes
+* getNeighbors(vertex) -> Returns all adjecent vertexes
+* size() -> Gets the numbers of vertexes in the graph

@@ -12,32 +12,32 @@ describe('Graphs', () => {
     graph._adjacencyList.clear();
   });
 
-  it('addVertex() Node can be successfully added to the graph', () => {
+  it('addNode() Node can be successfully added to the graph', () => {
     let oneVertex = new Vertex(1);
-    graph.addVertex(oneVertex);
+    graph.addNode(oneVertex);
     expect(graph._adjacencyList.get(oneVertex)).toEqual([]);
   });
 
-  it('addDirectedEdge() An edge can be successfully added to the graph', () => {
+  it('addEdge() An edge can be successfully added to the graph', () => {
     let oneVertex = new Vertex(1);
     let twoVertex = new Vertex(2);
-    graph.addVertex(oneVertex);
-    graph.addVertex(twoVertex);
-    graph.addDirectedEdge(oneVertex, twoVertex);
+    graph.addNode(oneVertex);
+    graph.addNode(twoVertex);
+    graph.addEdge(oneVertex, twoVertex);
 
     let expected = [new Edge(new Vertex(2),0)];
     expect(graph._adjacencyList.get(oneVertex)).toStrictEqual(expected);
   });
 
-  it('A collection of all nodes can be properly retrieved from the graph', () => {
+  it('getNodes() A collection of all nodes can be properly retrieved from the graph', () => {
     let oneVertex = new Vertex(1);
     let twoVertex = new Vertex(2);
     let threeVertex = new Vertex(3);
-    graph.addVertex(oneVertex);
-    graph.addVertex(twoVertex);
-    graph.addVertex(threeVertex);
-    graph.addDirectedEdge(oneVertex, twoVertex);
-    graph.addDirectedEdge(oneVertex, threeVertex);
+    graph.addNode(oneVertex);
+    graph.addNode(twoVertex);
+    graph.addNode(threeVertex);
+    graph.addEdge(oneVertex, twoVertex);
+    graph.addEdge(oneVertex, threeVertex);
 
 
     graph.printGraph();
@@ -47,9 +47,9 @@ describe('Graphs', () => {
   it('getNeighbors() All appropriate neighbors can be retrieved from the graph', () => {
     let oneVertex = new Vertex(1);
     let twoVertex = new Vertex(2);
-    graph.addVertex(oneVertex);
-    graph.addVertex(twoVertex);
-    graph.addDirectedEdge(oneVertex, twoVertex);
+    graph.addNode(oneVertex);
+    graph.addNode(twoVertex);
+    graph.addEdge(oneVertex, twoVertex);
     let expected = [{vertex: { value: 2, }, weight: 0} ];
 
     expect(graph.getNeighbors(oneVertex)).toEqual(expected);
@@ -59,9 +59,16 @@ describe('Graphs', () => {
   //   expect().toEqual();
   // });
 
-  // it('The proper size is returned, representing the number of nodes in the graph', () => {
-  //   expect().toEqual();
-  // });
+  it('size() The proper size is returned, representing the number of nodes in the graph', () => {
+    let oneVertex = new Vertex(1);
+    let twoVertex = new Vertex(2);
+    graph.addNode(oneVertex);
+    graph.addNode(twoVertex);
+    graph.addEdge(oneVertex, twoVertex);
+    let expected = 2;
+
+    expect(graph.size()).toEqual(expected);
+  });
 
   // it('A graph with only one node and edge can be properly returned', () => {
   //   expect().toEqual();
