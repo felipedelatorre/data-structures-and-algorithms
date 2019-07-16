@@ -1,5 +1,4 @@
 'use strict';
-const Queue = require('./queue');
 
 class Vertex {
   constructor(value){
@@ -100,48 +99,6 @@ class Graph {
       }
     }
   }
-
-
-  breadthFirst(startingNode){
-    if(!startingNode){
-      return 'Missing starting node';
-    }
-    let visited = [];
-    let q = new Queue();
-
-    visited.push(startingNode);
-    q.enqueue(startingNode);
-
-    while (q.peek()) {
-      let getQueueElement = q.dequeue();
-
-      let list = this._adjacencyList.get(getQueueElement);
-      for (let i in list) {
-        let neigh = list[i];
-        if (!visited.includes(neigh)) {
-          visited.push(neigh.vertex);
-          q.enqueue(neigh);
-        }
-      }
-    }
-    let keys = visited.map(key => key.value);
-    return keys;
-  }
-
-  // getEdge(destinations){
-  //   // Error checking
-  //   // for(let location in destinations){
-  //   //   if(this._adjacencyList.has(location)){
-  //   //     throw new Error('A location does not match our records');
-  //   //   }
-  //   // }
-
-  //   let
-
-  //   return this._adjacencyList.has(destinations[0]);
-  // }
-
-
 
   printGraph(){
     for (let [key, value] of this._adjacencyList) {
