@@ -35,3 +35,44 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 * getNodes() -> Retruns a list of all vertexes
 * getNeighbors(vertex) -> Returns all adjecent vertexes
 * size() -> Gets the numbers of vertexes in the graph
+
+
+# BreadthFirst Challenge Summary
+Extend your graph object with a breadth-first traversal method that accepts a starting node. 
+
+## Challenge Description
+Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+## Approach & Efficiency
+O(n) to traverse. Depends on the number of vertices and edges
+
+## BreadthFirst Solution
+![BreadthFirst](./assets/breadthFirst.jpg)
+
+```Js
+  breadthFirst(startingNode){
+    if(!startingNode){
+      return 'Missing starting node';
+    }
+    let visited = [];
+    let q = new Queue();
+
+    visited.push(startingNode);
+    q.enqueue(startingNode);
+
+    while (q.peek()) {
+      let getQueueElement = q.dequeue();
+
+      let list = this._adjacencyList.get(getQueueElement);
+      for (let i in list) {
+        let neigh = list[i];
+        if (!visited.includes(neigh)) {
+          visited.push(neigh.vertex);
+          q.enqueue(neigh);
+        }
+      }
+    }
+    let keys = visited.map(key => key.value);
+    return keys;
+  }
+```
