@@ -20,13 +20,13 @@ describe('getEdge', () => {
     graph.addNode(lumioseCity);
     graph.addNode(cinnabarIsland);
     graph.addNode(palletTown);
-    graph.addEdge(lumioseCity, cinnabarIsland);
-    graph.addEdge(cinnabarIsland, palletTown);
+    graph.addEdge(lumioseCity, cinnabarIsland, 43);
+    graph.addEdge(cinnabarIsland, palletTown, 12);
 
     let destinations = ['Lumiose City', 'Cinnabar Island','Pallet Town'];
-    graph.printGraph();
+    // graph.printGraph();
     let result = getEdge(destinations, graph);
-    expect(result).toEqual([ 'Airplane', 'Car', 'Train' ]);
+    expect(result).toEqual(55);
   });
 
   // it('should return one result if only one added', () => {

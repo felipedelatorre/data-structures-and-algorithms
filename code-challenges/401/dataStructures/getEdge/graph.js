@@ -60,7 +60,6 @@ class Graph {
 
   getNodes(){
     let nodes = [ ...this._adjacencyList.keys() ];
-    console.log(nodes);
     return nodes;
   }
 
