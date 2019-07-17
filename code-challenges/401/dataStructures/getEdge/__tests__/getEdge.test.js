@@ -29,29 +29,27 @@ describe('getEdge', () => {
     expect(result).toEqual(55);
   });
 
-  // it('should return one result if only one added', () => {
-  //   let airplaneVertex = new Vertex('Airplane');
+  it('should return one result if only one added', () => {
+    let airplaneVertex = new Vertex('Airplane');
 
-  //   let result = graph.breadthFirst(airplaneVertex);
-  //   expect(result).toEqual(['Airplane']);
-  // });
+    let result = graph.breadthFirst(airplaneVertex);
+    expect(result).toEqual(['Airplane']);
+  });
 
-  // it('should throw an error. Missing city in map', () => {
-  //   let lumioseCity = new Vertex('Lumiose City');
-  //   let cinnabarIsland = new Vertex('Cinnabar Island');
-  //   let palletTown = new Vertex('Pallet Town');
-  //   let viridianCity = new Vertex('Viridian City');
+  it('should throw an error. Missing city in map', () => {
+    let lumioseCity = new Vertex('Lumiose City');
+    let cinnabarIsland = new Vertex('Cinnabar Island');
 
-  //   graph.addNode(lumioseCity);
-  //   graph.addNode(cinnabarIsland);
-  //   graph.addNode(palletTown);
-  //   graph.addEdge(lumioseCity, cinnabarIsland);
-  //   graph.addEdge(cinnabarIsland, palletTown);
+    graph.addNode(lumioseCity);
+    graph.addNode(cinnabarIsland);
+    graph.addEdge(lumioseCity, cinnabarIsland);
 
-  //   expect(()=>{
-  //     graph.getEdge([lumioseCity,palletTown,viridianCity]).toThrow();
-  //   });
-  // });
+    let destinations = ['Lumiose City', 'Cinnabar Island'];
+
+    expect(()=>{
+      graph.getEdge(destinations).toThrow();
+    });
+  });
 
 });
 
