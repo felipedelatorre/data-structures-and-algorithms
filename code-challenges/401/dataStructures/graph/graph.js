@@ -1,5 +1,4 @@
 'use strict';
-const Queue = require('./queue');
 
 class Vertex {
   constructor(value){
@@ -61,105 +60,82 @@ class Graph {
 
   getNodes(){
     let nodes = [ ...this._adjacencyList.keys() ];
-    console.log(nodes);
     return nodes;
   }
-
 
   size(){
     return this._adjacencyList.size;
   }
 
-  pathTo(startVertex, goalVertex){
-    const stack = [];
-    const visitedVertices = new Set();
-    const parentPath = new Map();
 
-    stack.push(startVertex);
-    visitedVertices.add(startVertex);
+  // Not a required method
 
-    while(stack.length){
-      const currentVertex = stack.pop();
+  // pathTo(startVertex, goalVertex){
+  //   const stack = [];
+  //   const visitedVertices = new Set();
+  //   const parentPath = new Map();
 
-      if(currentVertex === goalVertex){
-        return parentPath;
-      }
+  //   stack.push(startVertex);
+  //   visitedVertices.add(startVertex);
 
-      const neighbors = this.getNeighbors(currentVertex);
+  //   while(stack.length){
+  //     const currentVertex = stack.pop();
 
-      for(let edge of neighbors){
-        const neighborVertex = edge.vertex;
+  //     if(currentVertex === goalVertex){
+  //       return parentPath;
+  //     }
 
-        if(visitedVertices.has(neighborVertex)){
-          continue;
-        }else{
-          visitedVertices.add(neighborVertex);
-        }
-        stack.push(neighborVertex);
-        parentPath.set(neighborVertex, currentVertex);
-      }
-    }
-  }
+  //     const neighbors = this.getNeighbors(currentVertex);
 
+  //     for(let edge of neighbors){
+  //       const neighborVertex = edge.vertex;
 
-  breadthFirst(startingNode){
-    if(!startingNode){
-      return 'Missing starting node';
-    }
-    let visited = [];
-    let q = new Queue();
-
-    visited.push(startingNode);
-    q.enqueue(startingNode);
-
-    while (q.peek()) {
-      let getQueueElement = q.dequeue();
-
-      let list = this._adjacencyList.get(getQueueElement);
-      for (let i in list) {
-        let neigh = list[i];
-        if (!visited.includes(neigh)) {
-          visited.push(neigh.vertex);
-          q.enqueue(neigh);
-        }
-      }
-    }
-    let keys = visited.map(key => key.value);
-    return keys;
-  }
-
-  // getEdge(destinations){
-  //   // Error checking
-  //   // for(let location in destinations){
-  //   //   if(this._adjacencyList.has(location)){
-  //   //     throw new Error('A location does not match our records');
-  //   //   }
-  //   // }
-
-  //   let
-
-  //   return this._adjacencyList.has(destinations[0]);
+  //       if(visitedVertices.has(neighborVertex)){
+  //         continue;
+  //       }else{
+  //         visitedVertices.add(neighborVertex);
+  //       }
+  //       stack.push(neighborVertex);
+  //       parentPath.set(neighborVertex, currentVertex);
+  //     }
+  //   }
   // }
 
 
+  // Needs to be move to its on file
 
-  printGraph(){
-    for (let [key, value] of this._adjacencyList) {
-      console.log(key.value, value);
-    }
-  }
+  // breadthFirst(startingNode){
+  //   if(!startingNode){
+  //     return 'Missing starting node';
+  //   }
+  //   let visited = [];
+  //   let q = new Queue();
 
-  prettyPrintAdjacencyList(){
-    // Iterate over all keys in map
-    // For each key, print to screen
-    // Print vertex in all edges
-  }
+  //   visited.push(startingNode);
+  //   q.enqueue(startingNode);
 
-  prettyPrintAdjacencyMatrix(){
-    // Iterate over all keys in map
-    // For each key, print to screen
-    // Print vertex in all edges
-  }
+  //   while (q.peek()) {
+  //     let getQueueElement = q.dequeue();
+
+  //     let list = this._adjacencyList.get(getQueueElement);
+  //     for (let i in list) {
+  //       let neigh = list[i];
+  //       if (!visited.includes(neigh)) {
+  //         visited.push(neigh.vertex);
+  //         q.enqueue(neigh);
+  //       }
+  //     }
+  //   }
+  //   let keys = visited.map(key => key.value);
+  //   return keys;
+  // }
+
+
+  // printGraph(){
+  //   for (let [key, value] of this._adjacencyList) {
+  //     console.log(key.value, value);
+  //   }
+  // }
 
 }
 

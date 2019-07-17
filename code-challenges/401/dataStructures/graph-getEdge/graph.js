@@ -68,55 +68,46 @@ class Graph {
     return this._adjacencyList.size;
   }
 
-  pathTo(startVertex, goalVertex){
-    const stack = [];
-    const visitedVertices = new Set();
-    const parentPath = new Map();
+  // Not a required method
 
-    stack.push(startVertex);
-    visitedVertices.add(startVertex);
+  // pathTo(startVertex, goalVertex){
+  //   const stack = [];
+  //   const visitedVertices = new Set();
+  //   const parentPath = new Map();
 
-    while(stack.length){
-      const currentVertex = stack.pop();
+  //   stack.push(startVertex);
+  //   visitedVertices.add(startVertex);
 
-      if(currentVertex === goalVertex){
-        return parentPath;
-      }
+  //   while(stack.length){
+  //     const currentVertex = stack.pop();
 
-      const neighbors = this.getNeighbors(currentVertex);
+  //     if(currentVertex === goalVertex){
+  //       return parentPath;
+  //     }
 
-      for(let edge of neighbors){
-        const neighborVertex = edge.vertex;
+  //     const neighbors = this.getNeighbors(currentVertex);
 
-        if(visitedVertices.has(neighborVertex)){
-          continue;
-        }else{
-          visitedVertices.add(neighborVertex);
-        }
-        stack.push(neighborVertex);
-        parentPath.set(neighborVertex, currentVertex);
-      }
-    }
-  }
+  //     for(let edge of neighbors){
+  //       const neighborVertex = edge.vertex;
 
-  printGraph(){
-    for (let [key, value] of this._adjacencyList) {
-      console.log(key.value, value);
-    }
-  }
+  //       if(visitedVertices.has(neighborVertex)){
+  //         continue;
+  //       }else{
+  //         visitedVertices.add(neighborVertex);
+  //       }
+  //       stack.push(neighborVertex);
+  //       parentPath.set(neighborVertex, currentVertex);
+  //     }
+  //   }
+  // }
 
-  prettyPrintAdjacencyList(){
-    // Iterate over all keys in map
-    // For each key, print to screen
-    // Print vertex in all edges
-  }
+  // Not required method
 
-  prettyPrintAdjacencyMatrix(){
-    // Iterate over all keys in map
-    // For each key, print to screen
-    // Print vertex in all edges
-  }
-
+  // printGraph(){
+  //   for (let [key, value] of this._adjacencyList) {
+  //     console.log(key.value, value);
+  //   }
+  // }
 }
 
 module.exports = {Graph, Vertex, Edge};
