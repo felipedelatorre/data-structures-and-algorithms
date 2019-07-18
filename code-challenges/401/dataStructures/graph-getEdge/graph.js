@@ -63,16 +63,51 @@ class Graph {
     return nodes;
   }
 
+
   size(){
     return this._adjacencyList.size;
   }
 
-  printGraph(){
-    for (let [key, value] of this._adjacencyList) {
-      console.log(key.value, value);
-    }
-  }
+  // Not a required method
 
+  // pathTo(startVertex, goalVertex){
+  //   const stack = [];
+  //   const visitedVertices = new Set();
+  //   const parentPath = new Map();
+
+  //   stack.push(startVertex);
+  //   visitedVertices.add(startVertex);
+
+  //   while(stack.length){
+  //     const currentVertex = stack.pop();
+
+  //     if(currentVertex === goalVertex){
+  //       return parentPath;
+  //     }
+
+  //     const neighbors = this.getNeighbors(currentVertex);
+
+  //     for(let edge of neighbors){
+  //       const neighborVertex = edge.vertex;
+
+  //       if(visitedVertices.has(neighborVertex)){
+  //         continue;
+  //       }else{
+  //         visitedVertices.add(neighborVertex);
+  //       }
+  //       stack.push(neighborVertex);
+  //       parentPath.set(neighborVertex, currentVertex);
+  //     }
+  //   }
+  // }
+
+  // Not required method
+
+  // printGraph(){
+  //   for (let [key, value] of this._adjacencyList) {
+  //     console.log(key.value, value);
+  //   }
+  // }
 }
 
 module.exports = {Graph, Vertex, Edge};

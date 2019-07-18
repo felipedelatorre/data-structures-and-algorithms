@@ -1,6 +1,11 @@
 'use strict';
 
-const Node = require('./node');
+class Node {
+  constructor(value){
+    this.value = value,
+    this.next = null;
+  }
+}
 
 class Queue{
   constructor(){
@@ -33,9 +38,6 @@ class Queue{
       return null;
     }
   }
-
-
 }
-
 
 module.exports = Queue;

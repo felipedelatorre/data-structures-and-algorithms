@@ -66,12 +66,12 @@ class Graph {
   size(){
     return this._adjacencyList.size;
   }
-
-  printGraph(){
-    for (let [key, value] of this._adjacencyList) {
-      console.log(key.value, value);
-    }
-  }
+  
+  // printGraph(){
+  //   for (let [key, value] of this._adjacencyList) {
+  //     console.log(key.value, value);
+  //   }
+  // }
 
 }
 

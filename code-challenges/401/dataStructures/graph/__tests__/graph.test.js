@@ -1,6 +1,6 @@
 'use strict';
 
-const GraphFunctions = require('../graph');
+const GraphFunctions = require('../../graph-depthFirst/graph');
 const Graph = GraphFunctions.Graph;
 const Vertex = GraphFunctions.Vertex;
 const Edge = GraphFunctions.Edge;
@@ -29,18 +29,33 @@ describe('Graphs', () => {
     expect(graph._adjacencyList.get(oneVertex)).toStrictEqual(expected);
   });
 
-  it('getNodes() A collection of all nodes can be properly retrieved from the graph', () => {
+  it('getNodes() should return array of vertex', () => {
+    let gothamVertex = new Vertex('Gotham');
+    let palletTown = new Vertex('PalletTown');
+    let bikiniBottom = new Vertex('Bikini Bottom');
+    let stardewValley = new Vertex('Startdew Valley');
+    graph.addNode(gothamVertex);
+    graph.addNode(palletTown);
+    graph.addNode(bikiniBottom);
+    graph.addNode(stardewValley);
+    graph.addEdge(gothamVertex, palletTown);
+
+    let result = graph.getNodes();
+    expect(result).toEqual([gothamVertex,palletTown, bikiniBottom, stardewValley]);
+  });
+
+  it('getValues() A collection of all nodes can be properly retrieved from the graph', () => {
     let oneVertex = new Vertex('Airplane');
     let twoVertex = new Vertex('Car');
     let threeVertex = new Vertex('Train');
+
     graph.addNode(oneVertex);
     graph.addNode(twoVertex);
     graph.addNode(threeVertex);
     graph.addEdge(oneVertex, twoVertex);
     graph.addEdge(oneVertex, threeVertex);
 
-
-    let nodes = graph.getNodes();
+    let nodes = graph.getValues();
     expect(nodes).toEqual([ 'Airplane', 'Car', 'Train' ]);
   });
 
@@ -55,21 +70,6 @@ describe('Graphs', () => {
     expect(graph.getNeighbors(oneVertex)).toEqual(expected);
   });
 
-  it('Neighbors are returned with the weight between nodes included', () => {
-    let oneVertex = new Vertex('Airplane');
-    let twoVertex = new Vertex('Car');
-    let threeVertex = new Vertex('Train');
-    graph.addNode(oneVertex);
-    graph.addNode(twoVertex);
-    graph.addNode(threeVertex);
-    graph.addEdge(oneVertex, twoVertex);
-    graph.addEdge(oneVertex, threeVertex);
-
-
-    graph.bfs(oneVertex);
-    expect().toEqual();
-  });
-
   it('size() The proper size is returned, representing the number of nodes in the graph', () => {
     let oneVertex = new Vertex(1);
     let twoVertex = new Vertex(2);
@@ -81,12 +81,5 @@ describe('Graphs', () => {
     expect(graph.size()).toEqual(expected);
   });
 
-  // it('A graph with only one node and edge can be properly returned', () => {
-  //   expect().toEqual();
-  // });
-
-  // it('An empty graph properly returns null', () => {
-  //   expect().toEqual();
-  // });
 });
 
