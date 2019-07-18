@@ -1,6 +1,6 @@
 'use strict';
 
-const GraphFunctions = require('../graph');
+const GraphFunctions = require('../../graph-depthFirst/graph');
 const Graph = GraphFunctions.Graph;
 const Vertex = GraphFunctions.Vertex;
 const Edge = GraphFunctions.Edge;
